@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio site (b-aran.github.io). Pure static HTML5 site built on the **Solid State** template from HTML5 UP. No build framework, no Node.js, no package.json. Deployed automatically via GitHub Pages from the repo root.
+Personal portfolio site (b-aran.github.io). Currently a pure static HTML5 site (Solid State template by HTML5 UP), undergoing a full redesign on the `portfolio-rework` branch. See [plan.md](plan.md) for the task list and session log.
+
+**Redesign target:** visual style of [bchiang7/v4](https://github.com/bchiang7/v4) (dark navy, teal accent, numbered sections), built in Astro + Tailwind CSS v4.
 
 ## Development
 
