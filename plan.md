@@ -14,12 +14,12 @@ Explored the current site (vanilla HTML5, Solid State template by HTML5 UP). Eva
 
 ## Tasks
 
-### Phase 1 — Bootstrap
-- [ ] Initialize Astro project (`npm create astro@latest`) inside the repo
-- [ ] Install and configure Tailwind CSS v4 (`@tailwindcss/vite`)
-- [ ] Set up TypeScript (`tsconfig.json`)
-- [ ] Configure Astro for GitHub Pages static output (`astro.config.mjs` with `output: 'static'` and correct `site` URL)
-- [ ] Set up design tokens: color palette, fonts, CSS custom properties (navy, teal accent, slate, mono font)
+### Phase 1 — Bootstrap ✓
+- [x] Initialize Astro project (`npm create astro@latest`) inside the repo
+- [x] Install and configure Tailwind CSS v4 (`@tailwindcss/vite`)
+- [x] Set up TypeScript (`tsconfig.json`)
+- [x] Configure Astro for GitHub Pages static output (`astro.config.mjs` with `output: 'static'` and correct `site` URL)
+- [x] Set up design tokens: color palette, fonts, CSS custom properties (navy, teal accent, slate, mono font)
 
 ### Phase 2 — Shell & Layout
 - [ ] Build root layout (`src/layouts/Layout.astro`): HTML shell, global styles, font imports
@@ -38,7 +38,7 @@ Explored the current site (vanilla HTML5, Solid State template by HTML5 UP). Eva
 - [ ] **Contact**: centered section with large heading + email CTA button
 
 ### Phase 4 — Content
-- [ ] Write `src/config.ts`: name, title, email, social links, nav links
+- [x] Write `src/config.ts`: name, title, email, social links, nav links
 - [ ] Write job entries in `src/content/jobs/` (ASML internship / Boost Mode)
 - [ ] Write featured project entries in `src/content/featured/` (Boost Mode, Stellar, Khemia)
 - [ ] Write other project entries in `src/content/projects/` (nand2tetris, LearnOpenGL, Chronicles, Acrobabot, La Retirada, IoT4SafeDriving, Temperature War)
