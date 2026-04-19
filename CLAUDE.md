@@ -8,6 +8,10 @@ Personal portfolio site (b-aran.github.io). Currently a pure static HTML5 site (
 
 **Redesign target:** visual style of [bchiang7/v4](https://github.com/bchiang7/v4) (dark navy, teal accent, numbered sections), built in Astro + Tailwind CSS v4.
 
+## Working Convention
+
+**Update [plan.md](plan.md) on every commit** — mark completed tasks as `[x]` and add the commit hash + one-line description to the session log. This keeps plan.md the authoritative record of what has been done and what is next.
+
 ## Development
 
 No build step for HTML. For CSS changes, edit SCSS source files and recompile:

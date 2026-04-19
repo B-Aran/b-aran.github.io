@@ -10,6 +10,10 @@ Stack: Astro + Tailwind CSS v4 + TypeScript
 ### Session 1 — 2026-04-19
 Explored the current site (vanilla HTML5, Solid State template by HTML5 UP). Evaluated two reference portfolios: RyanFitzgerald/devportfolio (Astro + Tailwind, white/minimal) and bchiang7/v4 (Gatsby + React, dark navy). Decided to adopt the **bchiang7/v4 visual design** but build in **Astro** for lower long-term maintenance overhead. Created CLAUDE.md and this plan.
 
+**Commits:**
+- `8f47470` — docs: add CLAUDE.md and redesign plan
+- `5d9da38` — feat: bootstrap Astro + Tailwind CSS v4 project — Scaffolded package.json, astro.config.mjs, tsconfig.json, Layout.astro, global CSS with bchiang7/v4 design tokens (navy palette, teal accent, CSS custom properties), src/config.ts. Build verified. Phase 1 complete.
+
 ---
 
 ## Tasks
