@@ -18,7 +18,7 @@ Explored the current site (vanilla HTML5, Solid State template by HTML5 UP). Eva
 Resumed from Phase 2. Built all shell components: Loader (logo fade-in, removes itself after 900ms), Nav (fixed top bar with scroll-shrink, numbered links, hamburger + mobile slide-in menu), Social (side-mounted GitHub/LinkedIn icons), Email (vertical rotated email link), Footer. Wired all into Layout.astro with responsive content padding. Build verified.
 
 **Commits:**
-- `(this commit)` — feat: build Phase 2 shell components (Loader, Nav, Social, Email, Footer)
+- `3dfec22` — feat: build Phase 2 shell components (Loader, Nav, Social, Email, Footer)
 
 ---
 
