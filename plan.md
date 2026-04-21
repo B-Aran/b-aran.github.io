@@ -14,6 +14,12 @@ Explored the current site (vanilla HTML5, Solid State template by HTML5 UP). Eva
 - `8f47470` — docs: add CLAUDE.md and redesign plan
 - `5d9da38` — feat: bootstrap Astro + Tailwind CSS v4 project — Scaffolded package.json, astro.config.mjs, tsconfig.json, Layout.astro, global CSS with bchiang7/v4 design tokens (navy palette, teal accent, CSS custom properties), src/config.ts. Build verified. Phase 1 complete.
 
+### Session 2 — 2026-04-21
+Resumed from Phase 2. Built all shell components: Loader (logo fade-in, removes itself after 900ms), Nav (fixed top bar with scroll-shrink, numbered links, hamburger + mobile slide-in menu), Social (side-mounted GitHub/LinkedIn icons), Email (vertical rotated email link), Footer. Wired all into Layout.astro with responsive content padding. Build verified.
+
+**Commits:**
+- `(this commit)` — feat: build Phase 2 shell components (Loader, Nav, Social, Email, Footer)
+
 ---
 
 ## Tasks
@@ -25,13 +31,13 @@ Explored the current site (vanilla HTML5, Solid State template by HTML5 UP). Eva
 - [x] Configure Astro for GitHub Pages static output (`astro.config.mjs` with `output: 'static'` and correct `site` URL)
 - [x] Set up design tokens: color palette, fonts, CSS custom properties (navy, teal accent, slate, mono font)
 
-### Phase 2 — Shell & Layout
-- [ ] Build root layout (`src/layouts/Layout.astro`): HTML shell, global styles, font imports
-- [ ] Build `Loader` component (fade-in intro animation, runs once on first visit)
-- [ ] Build `Nav` component: fixed top bar, scroll-shrink effect (100px → 70px), mobile hamburger menu
-- [ ] Build `Social` component: side-mounted icons on the left (GitHub, LinkedIn, email)
-- [ ] Build `Email` component: vertical email link on the right side
-- [ ] Build `Footer` component
+### Phase 2 — Shell & Layout ✓
+- [x] Build root layout (`src/layouts/Layout.astro`): HTML shell, global styles, font imports
+- [x] Build `Loader` component (fade-in intro animation, runs once on first visit)
+- [x] Build `Nav` component: fixed top bar, scroll-shrink effect (100px → 70px), mobile hamburger menu
+- [x] Build `Social` component: side-mounted icons on the left (GitHub, LinkedIn, email)
+- [x] Build `Email` component: vertical email link on the right side
+- [x] Build `Footer` component
 
 ### Phase 3 — Sections
 - [ ] **Hero**: full-viewport, left-aligned — mono "Hi, my name is" → large name → muted subtitle → short bio → CTA button, with staggered fade-up on load

@@ -1,0 +1,35 @@
+---
+import { siteConfig } from '@/config';
+---
+
+<footer>
+  <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer">
+    <small>Designed by <a href="https://github.com/bchiang7" target="_blank" rel="noopener noreferrer">bchiang7</a>, built by Borja Arán</small>
+  </a>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+  }
+
+  small {
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    line-height: 1;
+  }
+
+  a {
+    color: var(--light-slate);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--green);
+  }
+</style>

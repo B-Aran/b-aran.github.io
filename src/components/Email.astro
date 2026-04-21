@@ -1,0 +1,50 @@
+---
+import { siteConfig } from '@/config';
+---
+
+<div class="side side-right">
+  <a href={`mailto:${siteConfig.email}`} class="email-link">
+    {siteConfig.email}
+  </a>
+</div>
+
+<style>
+  .side {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 90px;
+    background-color: var(--light-slate);
+    margin-top: 1rem;
+  }
+
+  .side-right { right: 40px; }
+
+  .email-link {
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .email-link:hover {
+    color: var(--green);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 1080px) {
+    .side { display: none; }
+  }
+</style>
