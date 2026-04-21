@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: 'Borja Aran',
-  title: 'Game & Systems Developer',
+  title: 'Software Engineer',
   email: 'borja.aran.tejada@gmail.com',
 
   social: {
     github: 'https://github.com/B-Aran',
-    linkedin: 'https://linkedin.com/in/borja-arán',
+    linkedin: 'https://linkedin.com/in/borja-aran-tejada-252036203',
   },
 
   navLinks: [

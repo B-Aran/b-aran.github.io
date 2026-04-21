@@ -1,7 +1,7 @@
 ---
-title: Stellar
-description: A third-person action game built in Unreal Engine 5 featuring custom C++ gameplay systems, fluid combat mechanics, and hand-crafted level design. Focused on tight, responsive feel through careful tuning of character movement and ability execution.
+title: Game Systems — Stellar Entertainment
+description: Designed and implemented core game systems from scratch at Stellar Entertainment, including scalable Game Mode architecture that reduced designer content production time by ~40%. Delivered full multiplayer functionality using EOS backend and Unreal Engine, from initial planning through live deployment.
 cover: /images/featured/stellar.jpg
-tech: [Unreal Engine 5, C++, Blueprints]
+tech: [Unreal Engine 5, C++, EOS, Blueprints, Perforce]
 order: 1
 ---

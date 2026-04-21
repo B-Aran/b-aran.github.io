@@ -1,7 +1,7 @@
 ---
-title: Boost Mode
-description: A performance profiling tool for EUV semiconductor lithography machines, developed during my internship at ASML. Parses low-level hardware telemetry and generates structured cycle-time reports for process engineers, reducing a multi-hour manual workflow to minutes.
+title: Throughput Mode — ASML
+description: Developed a new throughput mode for the alignment scan of XT semiconductor lithography machines at ASML, reducing scan times by 30%. Involved deep work in C++ within safety-critical embedded software, close collaboration with hardware engineers, and end-to-end ownership from design through delivery.
 cover: /images/featured/boost-mode.jpg
-tech: [C++, Python, ASML SDK]
+tech: [C++, Python, Linux, Embedded Systems]
 order: 0
 ---
