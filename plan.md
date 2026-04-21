@@ -22,6 +22,7 @@ Then executed Phase 3 + Phase 4 content layer in the same session. Set up Astro 
 **Commits:**
 - `3dfec22` — feat: build Phase 2 shell components (Loader, Nav, Social, Email, Footer)
 - `8830c98` — feat: build Phase 3 sections and Phase 4 content layer
+- `b7b2f71` — fix: correct all content from CV — 4 real job roles, accurate project descriptions
 
 ---
 
