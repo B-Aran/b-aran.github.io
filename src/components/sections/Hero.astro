@@ -1,0 +1,90 @@
+---
+import { siteConfig } from '@/config';
+---
+
+<section id="hero">
+  <p class="hero-overline">Hi, my name is</p>
+  <h1 class="hero-name">{siteConfig.name}.</h1>
+  <h2 class="hero-subtitle">I build games &amp; engine systems.</h2>
+  <p class="hero-description">
+    I'm a game and systems developer focused on real-time rendering, gameplay mechanics, and low-level tooling.
+    I care about performance, feel, and the craft of building interactive experiences from the ground up.
+  </p>
+  <a href="#work" class="hero-cta btn">Check out my work!</a>
+</section>
+
+<style>
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100svh;
+    padding: 0;
+    max-width: 1000px;
+  }
+
+  #hero > * {
+    opacity: 0;
+    animation: fadeUp 0.5s var(--easing) forwards;
+  }
+
+  .hero-overline { animation-delay: 100ms; }
+  .hero-name     { animation-delay: 200ms; }
+  .hero-subtitle { animation-delay: 300ms; }
+  .hero-description { animation-delay: 400ms; }
+  .hero-cta      { animation-delay: 500ms; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-overline {
+    font-family: var(--font-mono);
+    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+    color: var(--green);
+    margin-bottom: 20px;
+  }
+
+  .hero-name {
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 600;
+    color: var(--lightest-slate);
+    line-height: 1.1;
+    margin: 0 0 10px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(30px, 6vw, 70px);
+    font-weight: 600;
+    color: var(--slate);
+    line-height: 1.1;
+    margin: 0 0 30px;
+  }
+
+  .hero-description {
+    max-width: 540px;
+    color: var(--slate);
+    font-size: var(--fz-lg);
+    line-height: 1.6;
+    margin-bottom: 50px;
+  }
+
+  .btn {
+    display: inline-block;
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.75rem;
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    line-height: 1;
+    text-decoration: none;
+    transition: var(--transition);
+    width: fit-content;
+  }
+
+  .btn:hover {
+    background-color: var(--green-tint);
+  }
+</style>

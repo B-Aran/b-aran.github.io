@@ -17,8 +17,11 @@ Explored the current site (vanilla HTML5, Solid State template by HTML5 UP). Eva
 ### Session 2 — 2026-04-21
 Resumed from Phase 2. Built all shell components: Loader (logo fade-in, removes itself after 900ms), Nav (fixed top bar with scroll-shrink, numbered links, hamburger + mobile slide-in menu), Social (side-mounted GitHub/LinkedIn icons), Email (vertical rotated email link), Footer. Wired all into Layout.astro with responsive content padding. Build verified.
 
+Then executed Phase 3 + Phase 4 content layer in the same session. Set up Astro 5 content collections (jobs, featured, projects) with typed schemas. Wrote content entries for 1 job (ASML), 3 featured projects (Boost Mode, Stellar, Khemia), and 7 other projects. Built all six section components (Hero, About, Experience, FeaturedWork, OtherProjects, Contact) with full bchiang7/v4 layout fidelity and scroll-reveal via IntersectionObserver. Build verified.
+
 **Commits:**
 - `3dfec22` — feat: build Phase 2 shell components (Loader, Nav, Social, Email, Footer)
+- `TBD` — feat: build Phase 3 sections and Phase 4 content layer
 
 ---
 
@@ -39,19 +42,19 @@ Resumed from Phase 2. Built all shell components: Loader (logo fade-in, removes 
 - [x] Build `Email` component: vertical email link on the right side
 - [x] Build `Footer` component
 
-### Phase 3 — Sections
-- [ ] **Hero**: full-viewport, left-aligned — mono "Hi, my name is" → large name → muted subtitle → short bio → CTA button, with staggered fade-up on load
-- [ ] **About**: bio paragraph + skills grid + photo
-- [ ] **Experience**: tab navigation between roles, content driven by `src/content/jobs/`
-- [ ] **Featured Work**: 2–3 projects with alternating image/text layout, driven by `src/content/featured/`
-- [ ] **Other Projects**: 3-column card grid, driven by `src/content/projects/`
-- [ ] **Contact**: centered section with large heading + email CTA button
+### Phase 3 — Sections ✓
+- [x] **Hero**: full-viewport, left-aligned — mono "Hi, my name is" → large name → muted subtitle → short bio → CTA button, with staggered fade-up on load
+- [x] **About**: bio paragraph + skills grid + photo placeholder
+- [x] **Experience**: tab navigation between roles, content driven by `src/content/jobs/`
+- [x] **Featured Work**: 2–3 projects with alternating image/text layout, driven by `src/content/featured/`
+- [x] **Other Projects**: 3-column card grid, driven by `src/content/projects/`
+- [x] **Contact**: centered section with large heading + email CTA button
 
 ### Phase 4 — Content
 - [x] Write `src/config.ts`: name, title, email, social links, nav links
-- [ ] Write job entries in `src/content/jobs/` (ASML internship / Boost Mode)
-- [ ] Write featured project entries in `src/content/featured/` (Boost Mode, Stellar, Khemia)
-- [ ] Write other project entries in `src/content/projects/` (nand2tetris, LearnOpenGL, Chronicles, Acrobabot, La Retirada, IoT4SafeDriving, Temperature War)
+- [x] Write job entries in `src/content/jobs/` (ASML internship / Boost Mode)
+- [x] Write featured project entries in `src/content/featured/` (Boost Mode, Stellar, Khemia)
+- [x] Write other project entries in `src/content/projects/` (nand2tetris, LearnOpenGL, Chronicles, Acrobabot, La Retirada, IoT4SafeDriving, Temperature War)
 - [ ] Source/optimize project images for the new layout
 
 ### Phase 5 — Polish & QA

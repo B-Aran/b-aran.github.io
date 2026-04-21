@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Borja Arán',
+  name: 'Borja Aran',
   title: 'Game & Systems Developer',
   email: 'borja.aran.tejada@gmail.com',
 
