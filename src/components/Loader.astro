@@ -1,0 +1,53 @@
+---
+---
+
+<div id="loader" aria-hidden="true">
+  <span class="loader-logo">&lt;B/&gt;</span>
+</div>
+
+<style>
+  #loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-navy);
+    transition: opacity 0.5s var(--easing), visibility 0.5s var(--easing);
+  }
+
+  #loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .loader-logo {
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: clamp(2rem, 6vw, 4rem);
+    opacity: 0;
+    animation: fadeIn 0.4s var(--easing) 0.1s forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+</style>
+
+<script>
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (!loader) return;
+
+    // Hide loader after short delay so the animation is visible
+    setTimeout(() => {
+      loader.classList.add('hidden');
+    }, 900);
+
+    // Remove from DOM after transition ends
+    loader.addEventListener('transitionend', () => {
+      loader.remove();
+    }, { once: true });
+  });
+</script>

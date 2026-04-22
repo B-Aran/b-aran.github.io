@@ -1,0 +1,256 @@
+---
+import { getCollection } from 'astro:content';
+
+const allJobs = await getCollection('jobs');
+const jobs = allJobs.sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="experience" data-reveal>
+  <h2 class="section-heading">
+    <span class="section-num">02.</span> Where I've Worked
+  </h2>
+
+  <div class="exp-container">
+    <div class="tab-list" role="tablist" aria-label="Job tabs">
+      {jobs.map((job, i) => (
+        <button
+          class:list={['tab-button', { active: i === 0 }]}
+          role="tab"
+          aria-selected={i === 0 ? 'true' : 'false'}
+          aria-controls={`panel-${i}`}
+          id={`tab-${i}`}
+          data-index={i}
+        >
+          {job.data.company}
+        </button>
+      ))}
+    </div>
+
+    <div class="tab-panels">
+      {jobs.map((job, i) => (
+        <div
+          class="tab-panel"
+          role="tabpanel"
+          id={`panel-${i}`}
+          aria-labelledby={`tab-${i}`}
+          hidden={i !== 0}
+        >
+          <h3 class="job-title">
+            {job.data.title}
+            <span class="job-company">
+              &nbsp;@&nbsp;<a href={job.data.url} target="_blank" rel="noopener noreferrer">{job.data.company}</a>
+            </span>
+          </h3>
+          <p class="job-range">{job.data.range}</p>
+          <ul class="job-bullets">
+            {job.data.bullets.map(bullet => (
+              <li set:html={bullet} />
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  #experience {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    font-size: clamp(26px, 5vw, 32px);
+    font-weight: 600;
+    color: var(--lightest-slate);
+    white-space: nowrap;
+    margin-bottom: 40px;
+  }
+
+  .section-heading::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 300px;
+    background-color: var(--lightest-navy);
+    margin-left: 20px;
+    flex-shrink: 1;
+  }
+
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
+    color: var(--green);
+    margin-right: 10px;
+  }
+
+  .exp-container {
+    display: flex;
+    gap: 0;
+    min-height: 340px;
+  }
+
+  .tab-list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 130px;
+    flex-shrink: 0;
+    border-left: 2px solid var(--lightest-navy);
+  }
+
+  .tab-button {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 42px;
+    background: none;
+    border: none;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    color: var(--slate);
+    white-space: nowrap;
+    text-align: left;
+    transition: var(--transition);
+  }
+
+  .tab-button:hover,
+  .tab-button.active {
+    color: var(--green);
+    background-color: var(--green-tint);
+    border-left-color: var(--green);
+  }
+
+  .tab-panels {
+    flex: 1;
+    padding: 10px 30px;
+  }
+
+  .job-title {
+    font-size: var(--fz-xxl);
+    font-weight: 500;
+    color: var(--lightest-slate);
+    margin-bottom: 5px;
+  }
+
+  .job-company a {
+    color: var(--green);
+  }
+
+  .job-range {
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    color: var(--light-slate);
+    margin-bottom: 25px;
+  }
+
+  .job-bullets {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .job-bullets li {
+    position: relative;
+    padding-left: 30px;
+    color: var(--slate);
+    font-size: var(--fz-lg);
+    line-height: 1.5;
+  }
+
+  .job-bullets li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+  }
+
+  @media (max-width: 600px) {
+    .exp-container {
+      flex-direction: column;
+    }
+
+    .tab-list {
+      flex-direction: row;
+      width: 100%;
+      border-left: none;
+      border-bottom: 2px solid var(--lightest-navy);
+      overflow-x: auto;
+    }
+
+    .tab-button {
+      border-left: none;
+      border-bottom: 2px solid transparent;
+      margin-left: 0;
+      margin-bottom: -2px;
+      height: 42px;
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      border-left-color: transparent;
+      border-bottom-color: var(--green);
+    }
+
+    .tab-panels {
+      padding: 15px 0;
+    }
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.tab-button');
+  const panels  = document.querySelectorAll<HTMLElement>('.tab-panel');
+
+  function activateTab(idx: number) {
+    buttons.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+      b.tabIndex = -1;
+    });
+    panels.forEach(p => { p.hidden = true; });
+
+    buttons[idx].classList.add('active');
+    buttons[idx].setAttribute('aria-selected', 'true');
+    buttons[idx].tabIndex = 0;
+    const panel = panels[idx];
+    if (panel) panel.hidden = false;
+  }
+
+  buttons.forEach((btn, i) => {
+    btn.tabIndex = i === 0 ? 0 : -1;
+
+    btn.addEventListener('click', () => activateTab(Number(btn.dataset.index)));
+
+    btn.addEventListener('keydown', (e: KeyboardEvent) => {
+      const current = Number(btn.dataset.index);
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        const next = (current + 1) % buttons.length;
+        activateTab(next);
+        buttons[next].focus();
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const prev = (current - 1 + buttons.length) % buttons.length;
+        activateTab(prev);
+        buttons[prev].focus();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        activateTab(0);
+        buttons[0].focus();
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        activateTab(buttons.length - 1);
+        buttons[buttons.length - 1].focus();
+      }
+    });
+  });
+</script>

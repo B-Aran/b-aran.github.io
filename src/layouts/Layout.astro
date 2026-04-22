@@ -1,0 +1,73 @@
+---
+import '@/styles/global.css';
+import Loader from '@/components/Loader.astro';
+import Nav from '@/components/Nav.astro';
+import Social from '@/components/Social.astro';
+import Email from '@/components/Email.astro';
+import Footer from '@/components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Personal portfolio of Borja Arán — Game & Systems Developer.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a href="#content" class="skip-link">Skip to content</a>
+    <Loader />
+    <Nav />
+    <Social />
+    <Email />
+    <div id="content">
+      <slot />
+    </div>
+    <Footer />
+
+    <script>
+      const observer = new IntersectionObserver(
+        entries => entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+            observer.unobserve(e.target);
+          }
+        }),
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>
+
+<style>
+  #content {
+    padding: 0 150px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1080px) {
+    #content { padding: 0 100px; }
+  }
+
+  @media (max-width: 768px) {
+    #content { padding: 0 50px; }
+  }
+
+  @media (max-width: 480px) {
+    #content { padding: 0 25px; }
+  }
+</style>

@@ -4,33 +4,37 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio site (b-aran.github.io). Pure static HTML5 site built on the **Solid State** template from HTML5 UP. No build framework, no Node.js, no package.json. Deployed automatically via GitHub Pages from the repo root.
+Personal portfolio site (b-aran.github.io). Built with **Astro + Tailwind CSS v4 + TypeScript**, visual style based on [bchiang7/v4](https://github.com/bchiang7/v4) (dark navy, teal accent, numbered sections). Deployed via GitHub Actions to GitHub Pages.
+
+## Working Convention
+
+**Update [plan.md](plan.md) on every commit** — mark completed tasks as `[x]` and add the commit hash + one-line description to the session log.
 
 ## Development
 
-No build step for HTML. For CSS changes, edit SCSS source files and recompile:
-
 ```bash
-sass assets/sass/main.scss assets/css/main.css
-sass assets/sass/noscript.scss assets/css/noscript.css
+npm run dev    # local dev server
+npm run build  # production build to dist/
 ```
 
-Compiled CSS files are committed to the repo.
+Deployment is automatic: pushing to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`), which builds and deploys to GitHub Pages.
 
 ## Structure
 
-- `index.html` — Main landing page: banner, two featured project spotlights, 8-item project grid, footer with contact
-- `pages/*.html` — Individual project detail pages, each with a back link to `index.html`
-- `pages/elements.html`, `pages/generic.html` — Unused HTML5 UP template references
-- `assets/sass/` — SCSS source (base, components, layout, libs)
-- `assets/css/` — Compiled CSS output
-- `assets/js/` — Vendored jQuery + plugins, plus `main.js` for scroll/menu logic
-- `images/` — Project screenshots; multi-image projects have subdirectories
+- `src/pages/index.astro` — Single-page site entry point
+- `src/layouts/Layout.astro` — HTML shell, global imports, IntersectionObserver for scroll-reveal
+- `src/components/` — Shell components: `Loader`, `Nav`, `Social`, `Email`, `Footer`
+- `src/components/sections/` — Page sections: `Hero`, `About`, `Experience`, `FeaturedWork`, `OtherProjects`, `Contact`
+- `src/content/jobs/` — Job entries (Astro content collection)
+- `src/content/featured/` — Featured project entries (Astro content collection)
+- `src/content/projects/` — Other project card entries (Astro content collection)
+- `src/styles/global.css` — Design tokens (CSS custom properties), base resets, scroll-reveal styles
+- `src/config.ts` — Site metadata: name, email, nav links, social links
+- `public/` — Static assets served as-is (favicon, images)
 
 ## Content
 
-Projects currently on the site:
-- **Featured spotlights (2):** Boost Mode (ASML, C/C++/Python), Stellar (UE5, C++)
-- **Grid (8):** Khemia (UE4/FMOD), nand2tetris, LearnOpenGL, Chronicles of Elathudel (Unity), Acrobabot (Unity), La Retirada (UE4), IoT4SafeDriving (Python/Docker), Temperature War (C#)
+- **Featured (3):** Boost Mode @ ASML (C++), Game Systems @ Stellar Entertainment (UE5/C++), Khemia (UE4/FMOD)
+- **Other projects (7):** nand2tetris, LearnOpenGL, Chronicles of Elathudel, Acrobabot, La Retirada, IoT4SafeDriving, Temperature War
 
 Contact: borja.aran.tejada@gmail.com · LinkedIn · GitHub
