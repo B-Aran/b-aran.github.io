@@ -17,7 +17,7 @@ const projects = allFeatured.sort((a, b) => a.data.order - b.data.order);
         <div class:list={['featured-item', { reverse: !isEven }]}>
           <div class="featured-img-wrapper">
             {project.data.cover
-              ? <img src={project.data.cover} alt={project.data.title} class="featured-img" />
+              ? <img src={project.data.cover} alt={project.data.title} class="featured-img" loading="lazy" />
               : <div class="featured-img-placeholder" />
             }
           </div>

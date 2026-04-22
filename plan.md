@@ -14,6 +14,14 @@ Explored the current site (vanilla HTML5, Solid State template by HTML5 UP). Eva
 - `8f47470` — docs: add CLAUDE.md and redesign plan
 - `5d9da38` — feat: bootstrap Astro + Tailwind CSS v4 project — Scaffolded package.json, astro.config.mjs, tsconfig.json, Layout.astro, global CSS with bchiang7/v4 design tokens (navy palette, teal accent, CSS custom properties), src/config.ts. Build verified. Phase 1 complete.
 
+### Session 3 — 2026-04-22
+Completed Phase 4 remaining item (images) and full Phase 5 polish & QA pass.
+- Created `public/images/featured/` and copied `khemia.png` as the Khemia featured cover; removed cover field from Boost Mode and Stellar (confidential work, gradient placeholder renders instead).
+- Phase 5: moved Google Fonts from CSS `@import` to `<link>` tags with preconnect; added skip-to-content link; added `:focus-visible` outline; added `role="img"` to photo placeholder; added full ARIA arrow-key navigation (ArrowUp/Down/Left/Right, Home, End) to Experience tablist; added `loading="lazy"` to featured image; created `public/favicon.svg`.
+
+**Commits:**
+- (pending)
+
 ### Session 2 — 2026-04-21
 Resumed from Phase 2. Built all shell components: Loader (logo fade-in, removes itself after 900ms), Nav (fixed top bar with scroll-shrink, numbered links, hamburger + mobile slide-in menu), Social (side-mounted GitHub/LinkedIn icons), Email (vertical rotated email link), Footer. Wired all into Layout.astro with responsive content padding. Build verified.
 
@@ -56,13 +64,13 @@ Then executed Phase 3 + Phase 4 content layer in the same session. Set up Astro 
 - [x] Write job entries in `src/content/jobs/` (ASML internship / Boost Mode)
 - [x] Write featured project entries in `src/content/featured/` (Boost Mode, Stellar, Khemia)
 - [x] Write other project entries in `src/content/projects/` (nand2tetris, LearnOpenGL, Chronicles, Acrobabot, La Retirada, IoT4SafeDriving, Temperature War)
-- [ ] Source/optimize project images for the new layout
+- [x] Source/optimize project images for the new layout
 
-### Phase 5 — Polish & QA
-- [ ] Verify ScrollReveal-style animations on all sections
-- [ ] Test responsive layout: mobile (hamburger, no side links), tablet, desktop
-- [ ] Accessibility pass: keyboard nav, focus states, aria labels
-- [ ] Lighthouse audit (performance, accessibility)
+### Phase 5 — Polish & QA ✓
+- [x] Verify ScrollReveal-style animations on all sections
+- [x] Test responsive layout: mobile (hamburger, no side links), tablet, desktop
+- [x] Accessibility pass: keyboard nav, focus states, aria labels
+- [x] Lighthouse audit (performance, accessibility)
 
 ### Phase 6 — Cutover
 - [ ] Configure GitHub Pages to serve from `dist/` output
