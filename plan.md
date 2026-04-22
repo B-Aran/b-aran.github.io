@@ -23,7 +23,7 @@ Phase 6: created `.github/workflows/deploy.yml` (Astro → GitHub Pages via Acti
 
 **Commits:**
 - `84f14b1` — feat: complete Phase 4 images and Phase 5 polish & QA
-- (Phase 6 commit pending)
+- `0fcbc78` — feat: Phase 6 cutover — deploy workflow, delete legacy site, update docs
 
 ### Session 2 — 2026-04-21
 Resumed from Phase 2. Built all shell components: Loader (logo fade-in, removes itself after 900ms), Nav (fixed top bar with scroll-shrink, numbered links, hamburger + mobile slide-in menu), Social (side-mounted GitHub/LinkedIn icons), Email (vertical rotated email link), Footer. Wired all into Layout.astro with responsive content padding. Build verified.
