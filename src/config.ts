@@ -2,6 +2,7 @@ export const siteConfig = {
   name: 'Borja Aran',
   title: 'Software Engineer',
   email: 'borja.aran.tejada@gmail.com',
+  resume: '/resume.pdf',
 
   social: {
     github: 'https://github.com/B-Aran',
