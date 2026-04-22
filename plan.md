@@ -20,7 +20,7 @@ Completed Phase 4 remaining item (images) and full Phase 5 polish & QA pass.
 - Phase 5: moved Google Fonts from CSS `@import` to `<link>` tags with preconnect; added skip-to-content link; added `:focus-visible` outline; added `role="img"` to photo placeholder; added full ARIA arrow-key navigation (ArrowUp/Down/Left/Right, Home, End) to Experience tablist; added `loading="lazy"` to featured image; created `public/favicon.svg`.
 
 **Commits:**
-- (pending)
+- `84f14b1` — feat: complete Phase 4 images and Phase 5 polish & QA
 
 ### Session 2 — 2026-04-21
 Resumed from Phase 2. Built all shell components: Loader (logo fade-in, removes itself after 900ms), Nav (fixed top bar with scroll-shrink, numbered links, hamburger + mobile slide-in menu), Social (side-mounted GitHub/LinkedIn icons), Email (vertical rotated email link), Footer. Wired all into Layout.astro with responsive content padding. Build verified.
