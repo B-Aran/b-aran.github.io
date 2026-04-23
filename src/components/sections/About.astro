@@ -35,7 +35,7 @@ const skills = [
 
     <div class="about-photo">
       <div class="photo-wrapper">
-        <div class="photo-placeholder" role="img" aria-label="Photo of Borja Arán"></div>
+        <img src="/images/me.jpeg" alt="Photo of Borja Arán" class="photo-img" />
       </div>
     </div>
   </div>
@@ -145,16 +145,20 @@ const skills = [
     transform: translate(8px, 8px);
   }
 
-  .photo-placeholder {
+  .photo-img {
     width: 100%;
     aspect-ratio: 1;
-    background-color: var(--green-tint);
+    object-fit: cover;
     border: 2px solid var(--green);
     border-radius: var(--border-radius);
-    position: relative;
+    display: block;
+    filter: grayscale(20%);
+    transition: var(--transition);
   }
 
-  /* Replace .photo-placeholder with an <img> when the photo is available */
+  .photo-wrapper:hover .photo-img {
+    filter: none;
+  }
 
   @media (max-width: 768px) {
     .about-grid {
